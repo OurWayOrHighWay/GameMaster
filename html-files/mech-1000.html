@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Game Master - Ürün Detayları">
-    <title>Game Master MECH-1000 - Ürün Detayları</title>
+    <title>Game Master MECH-1000 Mekanik Klavye</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -43,12 +43,12 @@
 
             <!-- Sağ Kısım: Ürün Bilgileri -->
             <div class="product-info">
-                <h2>Game Master MECH-1000</h2>
-                <p><strong>Fiyat:</strong> 999,00 TL</p>
+                <h2>Game Master MECH-1000 Mekanik Klavye Ürün Detaylarını İncele</h2>
+                <p><strong>Fiyat:</strong> B2C sitemizi satın al butonundan ziyaret edebilirsin.</p>
                 <p><strong>Stok Durumu:</strong> Stokta Var</p>
                 <p><strong>Garanti:</strong> 2 Yıl Garanti</p>
-                <p><strong>Ürün Açıklaması:</strong> Red Switch mekanik klavye, oyun deneyimini en üst seviyeye çıkaran RGB aydınlatma özelliklerine sahiptir.</p>
-                <a href="#" class="buy-button">Satın Al</a>
+                <p><strong>Ürün Açıklaması:</strong> Red Switch mekanik klavye, oyun deneyimini en üst seviyeye çıkaran 17 farklı aydınlatma özelliğine sahiptir.</p>
+                <a href="https://quantumbilgisayar.com.tr/klavye/1552-game-master-mech-1000-kablolu-rgb-red-switch-mekanik-gaming-klavye-0735035885949.html" class="buy-button">Satın Al</a>
 
                 <!-- Sekmeli Bilgi Bölümü Ürün Bilgilerinin Altında -->
                 <div class="product-tabs">
@@ -60,6 +60,7 @@
                     <div id="details" class="tab-content active">
                         <h3>Ürün Detayları</h3>
                         <p>Game Master MECH-1000, profesyonel oyuncular için özel olarak üretilmiştir...</p>
+                        <p>İçerisinde kullanılan Red Switch mekanik klavyenizi kullanırken aşırı ses çıkartmadan çalışır ve sizi oyun esnasında rahatsız etmez.</p>
                     </div>
 
                     <div id="tech-specs" class="tab-content">
@@ -69,6 +70,12 @@
                             <li>Aydınlatma: RGB</li>
                             <li>Bağlantı Tipi: Kablolu</li>
                             <li>Garanti Süresi: 2 Yıl</li>
+                            <li>Işık Modları: Mevcut</li>
+                            <li>Kablo Uzunluğu: 1.5 metre</li>
+                            <li>Ağırlık: 830 Gram</li>
+                            <li>Tuş Sayısı: 81 adet</li>
+                            <li>Ölçüler: 308*101*39mm</li>
+                            <li>Aydınlatma: Karışık Renklendirme (17 Farklı Aydınlatma Modu)</li>
                         </ul>
                     </div>
                 </div>
@@ -82,14 +89,14 @@
         <p><a href="#">İletişim</a> | <a href="#">Sosyal Medya</a></p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript Kodu -->
     <script>
         function changeImage(imageSrc) {
             document.getElementById('currentImage').src = imageSrc;
         }
 
         function showTab(event, tabId) {
-            // Tüm sekmelerin içeriklerini gizle
+            // Tüm sekmelerin içeriklerini gizle ve geçiş animasyonu başlat
             var tabContents = document.getElementsByClassName('tab-content');
             for (var i = 0; i < tabContents.length; i++) {
                 tabContents[i].classList.remove('active');
@@ -102,7 +109,10 @@
             }
 
             // Tıklanan sekmenin içeriğini göster ve "active" sınıfını ekle
-            document.getElementById(tabId).classList.add('active');
+            var activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+
+            // Tıklanan sekme başlığına "active" sınıfını ekle
             event.currentTarget.classList.add('active');
         }
     </script>

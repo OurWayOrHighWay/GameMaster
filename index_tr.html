@@ -138,6 +138,25 @@
         <p>© 2024 Game Master - Tüm hakları saklıdır.</p>
         <p><a href="#">İletişim</a> | <a href="#">Sosyal Medya</a></p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const detailsButton = document.querySelector(".details-button");
+            const specsButton = document.querySelector(".specs-button");
+            const tabContents = document.querySelectorAll(".tab-content");
+    
+            detailsButton.addEventListener("click", () => {
+                tabContents.forEach(content => content.classList.remove("active"));
+                document.querySelector("#details").classList.add("active");
+            });
+    
+            specsButton.addEventListener("click", () => {
+                tabContents.forEach(content => content.classList.remove("active"));
+                document.querySelector("#specs").classList.add("active");
+            });
+        });
+    </script>
+    
 </body>
 
 </html>

@@ -75,6 +75,7 @@ footer {
     padding: 20px;
     background-color: #2a2a2a;
 }
+
 /* Genel Link Stil Ayarları */
 a {
     color: #ffffff;  /* Beyaz renk */
@@ -84,6 +85,7 @@ a {
 a:hover {
     color: #ffcc00;  /* Üzerine gelindiğinde vurgu rengi (örn. sarı) */
 }
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));  /* Otomatik sütun sayısı */
@@ -195,86 +197,11 @@ nav ul li {
 .tabs li {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #f4f4f4;
-    margin-right: 10px;
-}
-
-.tabs li.active {
-    background-color: #ddd;
-    border-bottom: 2px solid #ffcc00;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-    margin-top: 20px;
-}
-/* Ürün Detay Sayfası */
-.product-container {
-    display: flex;
-    gap: 50px;
-    padding: 40px;
-    align-items: flex-start;
-}
-
-/* Mobil uyumluluk için düzenleme */
-@media (max-width: 768px) {
-    .product-container {
-        flex-direction: column; /* Mobilde dikey hizalanma */
-        padding: 20px;
-    }
-
-    .product-gallery, .product-info {
-        width: 100%; /* Her iki bölümü de tam genişlikte yap */
-    }
-
-    .main-image img {
-        width: 100%;
-    }
-
-    .thumbnails {
-        justify-content: center; /* Thumbnail'leri ortala */
-    }
-
-    .product-info {
-        padding-top: 20px; /* Görseller ile bilgiler arasında boşluk ekle */
-        text-align: center;
-    }
-
-    .buy-button {
-        display: block;
-        margin: 20px auto; /* Satın al butonunu ortaya al */
-    }
-}
-/* Ürün Detay Sayfası */
-.product-container {
-    display: flex;
-    gap: 50px;
-    padding: 40px;
-    align-items: flex-start;
-}
-
-/* Sekmeler */
-.product-tabs {
-    margin-top: 40px;
-}
-
-.tabs {
-    display: flex;
-    list-style: none;
-    padding: 0;
-}
-
-.tabs li {
-    padding: 10px 20px;
-    cursor: pointer;
     background-color: #ffcc00; /* Sekme arkaplanı sarı */
     margin-right: 10px;
     color: #333; /* Sekme yazısı koyu */
     font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .tabs li.active {
@@ -283,13 +210,21 @@ nav ul li {
     color: #000;
 }
 
+.tabs li:hover {
+    background-color: #f0d700;
+}
+
 .tab-content {
-    display: none;
+    max-height: 0; /* Geçiş için başlangıç yüksekliği 0 */
+    overflow: hidden;
+    opacity: 0; /* Görünmez başlangıç */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Geçiş animasyonu */
+    margin-top: 20px;
 }
 
 .tab-content.active {
-    display: block;
-    margin-top: 20px;
+    max-height: 1000px; /* İçeriğin yüksekliğini otomatik olarak ayarla */
+    opacity: 1;
 }
 
 /* Satın Al Butonu */
@@ -302,10 +237,12 @@ nav ul li {
     border-radius: 5px;
     font-weight: bold;
     margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .buy-button:hover {
     background-color: #e6b800;
+    transform: scale(1.05);
 }
 
 /* Mobil uyumluluk için düzenleme */
