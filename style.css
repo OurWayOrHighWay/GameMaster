@@ -1,6 +1,6 @@
 /* Genel Stil Ayarları */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Saira Semi Condensed', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1c1c1c;
@@ -34,20 +34,77 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Hero Bölümü İçindeki Logo Düzenlemesi */
 .hero {
+    position: relative; /* Hero bölümünü relative yapıyoruz ki logo buna göre pozisyonlansın */
     text-align: center;
     padding: 50px 20px;
-    background: url('product_images/Hero/172.jpg') no-repeat right;
+    background: url('#') no-repeat center;
     background-size: contain;
 }
 
+.hero .logo-anim {
+    position: absolute; /* Logoyu hero bölümüne göre konumlandırıyoruz */
+    top: -30%; /* Yüksekliğin %50'sinde (ortalama) */
+    right: 10px; /* Soldan 20px mesafe */
+    transform: translateY(-50%); /* Tam ortalamak için yukarıya kaydırma */
+    opacity: 0;
+    animation: lightningFlash 3s ease-in-out 1 forwards;
+}
+
+@keyframes lightningFlash {
+    0%, 30% {
+        opacity: 5%;
+    }
+    35% {
+        opacity: 80%;
+        transform: scale(0.1);
+    }
+    40%, 100% {
+        opacity: 1;
+        transform: scale(0.8);
+    }
+}
+
+
+/* Başlık ve Alt Başlık Animasyonları */
 .hero h2 {
     font-size: 48px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: titleAnimation 1s ease-out forwards; /* Animasyon 0.8 saniyede gerçekleşecek */
 }
 
 .hero p {
     font-size: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: subtitleAnimation 1s ease-out 0.4s forwards; /* 0.4 saniye gecikmeli animasyon */
 }
+
+/* Keyframes Animasyonları */
+@keyframes titleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5); /* Küçük boyut ve görünmez */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Tam boyut ve görünür */
+    }
+}
+
+@keyframes subtitleAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Aşağıdan yukarıya hareketle */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Normal konuma gelir */
+    }
+}
+
 
 .featured-products {
     padding: 50px 20px;
