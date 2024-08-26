@@ -36,7 +36,8 @@ nav ul li a {
 
 /* Hero Bölümü İçindeki Logo Düzenlemesi */
 .hero {
-    position: relative; /* Hero bölümünü relative yapıyoruz ki logo buna göre pozisyonlansın */
+    position: relative;
+    /* Hero bölümünü relative yapıyoruz ki logo buna göre pozisyonlansın */
     text-align: center;
     padding: 50px 20px;
     background: url('#') no-repeat center;
@@ -44,23 +45,32 @@ nav ul li a {
 }
 
 .hero .logo-anim {
-    position: absolute; /* Logoyu hero bölümüne göre konumlandırıyoruz */
-    top: -30%; /* Yüksekliğin %50'sinde (ortalama) */
-    right: 10px; /* Soldan 20px mesafe */
-    transform: translateY(-50%); /* Tam ortalamak için yukarıya kaydırma */
+    position: absolute;
+    /* Logoyu hero bölümüne göre konumlandırıyoruz */
+    top: -30%;
+    /* Yüksekliğin %50'sinde (ortalama) */
+    right: 10px;
+    /* Soldan 20px mesafe */
+    transform: translateY(-50%);
+    /* Tam ortalamak için yukarıya kaydırma */
     opacity: 0;
     animation: lightningFlash 3s ease-in-out 1 forwards;
 }
 
 @keyframes lightningFlash {
-    0%, 30% {
+
+    0%,
+    30% {
         opacity: 5%;
     }
+
     35% {
         opacity: 80%;
         transform: scale(0.1);
     }
-    40%, 100% {
+
+    40%,
+    100% {
         opacity: 1;
         transform: scale(0.8);
     }
@@ -72,36 +82,44 @@ nav ul li a {
     font-size: 48px;
     opacity: 0;
     transform: scale(0.8);
-    animation: titleAnimation 1s ease-out forwards; /* Animasyon 0.8 saniyede gerçekleşecek */
+    animation: titleAnimation 1s ease-out forwards;
+    /* Animasyon 0.8 saniyede gerçekleşecek */
 }
 
 .hero p {
     font-size: 24px;
     opacity: 0;
     transform: translateY(20px);
-    animation: subtitleAnimation 1s ease-out 0.4s forwards; /* 0.4 saniye gecikmeli animasyon */
+    animation: subtitleAnimation 1s ease-out 0.4s forwards;
+    /* 0.4 saniye gecikmeli animasyon */
 }
 
 /* Keyframes Animasyonları */
 @keyframes titleAnimation {
     0% {
         opacity: 0;
-        transform: scale(0.5); /* Küçük boyut ve görünmez */
+        transform: scale(0.5);
+        /* Küçük boyut ve görünmez */
     }
+
     100% {
         opacity: 1;
-        transform: scale(1); /* Tam boyut ve görünür */
+        transform: scale(1);
+        /* Tam boyut ve görünür */
     }
 }
 
 @keyframes subtitleAnimation {
     0% {
         opacity: 0;
-        transform: translateY(20px); /* Aşağıdan yukarıya hareketle */
+        transform: translateY(20px);
+        /* Aşağıdan yukarıya hareketle */
     }
+
     100% {
         opacity: 1;
-        transform: translateY(0); /* Normal konuma gelir */
+        transform: translateY(0);
+        /* Normal konuma gelir */
     }
 }
 
@@ -135,18 +153,23 @@ footer {
 
 /* Genel Link Stil Ayarları */
 a {
-    color: #ffffff;  /* Beyaz renk */
-    text-decoration: none;  /* Alt çizgi kaldır */
+    color: #ffffff;
+    /* Beyaz renk */
+    text-decoration: none;
+    /* Alt çizgi kaldır */
 }
 
 a:hover {
-    color: #ffcc00;  /* Üzerine gelindiğinde vurgu rengi (örn. sarı) */
+    color: #ffcc00;
+    /* Üzerine gelindiğinde vurgu rengi (örn. sarı) */
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));  /* Otomatik sütun sayısı */
-    gap: 20px;  /* Ürünler arasındaki boşluk */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    /* Otomatik sütun sayısı */
+    gap: 20px;
+    /* Ürünler arasındaki boşluk */
     margin: 20px 0;
 }
 
@@ -161,12 +184,14 @@ a:hover {
 .product img {
     width: 100%;
     height: auto;
-    max-height: 450px;  /* Görsel boyutunu sınırlamak */
+    max-height: 450px;
+    /* Görsel boyutunu sınırlamak */
     object-fit: cover;
 }
 
 .product:hover {
-    transform: scale(1.05);  /* Hover durumunda küçük büyüme efekti */
+    transform: scale(1.05);
+    /* Hover durumunda küçük büyüme efekti */
 }
 
 /* Header Düzenlemesi */
@@ -176,7 +201,8 @@ header {
     align-items: center;
     padding: 15px 20px;
     background-color: #2a2a2a;
-    flex-wrap: wrap;  /* Küçük ekranlarda öğelerin alt alta geçmesini sağlar */
+    flex-wrap: wrap;
+    /* Küçük ekranlarda öğelerin alt alta geçmesini sağlar */
 }
 
 .logo {
@@ -254,15 +280,18 @@ nav ul li {
 .tabs li {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #ffcc00; /* Sekme arkaplanı sarı */
+    background-color: #ffcc00;
+    /* Sekme arkaplanı sarı */
     margin-right: 10px;
-    color: #333; /* Sekme yazısı koyu */
+    color: #333;
+    /* Sekme yazısı koyu */
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .tabs li.active {
-    background-color: #e6b800; /* Aktif sekme daha koyu sarı */
+    background-color: #e6b800;
+    /* Aktif sekme daha koyu sarı */
     border-bottom: 2px solid #ffcc00;
     color: #000;
 }
@@ -272,15 +301,19 @@ nav ul li {
 }
 
 .tab-content {
-    max-height: 0; /* Geçiş için başlangıç yüksekliği 0 */
+    max-height: 0;
+    /* Geçiş için başlangıç yüksekliği 0 */
     overflow: hidden;
-    opacity: 0; /* Görünmez başlangıç */
-    transition: max-height 0.5s ease, opacity 0.5s ease; /* Geçiş animasyonu */
+    opacity: 0;
+    /* Görünmez başlangıç */
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    /* Geçiş animasyonu */
     margin-top: 20px;
 }
 
 .tab-content.active {
-    max-height: 1000px; /* İçeriğin yüksekliğini otomatik olarak ayarla */
+    max-height: 1000px;
+    /* İçeriğin yüksekliğini otomatik olarak ayarla */
     opacity: 1;
 }
 
@@ -309,7 +342,8 @@ nav ul li {
         padding: 20px;
     }
 
-    .product-gallery, .product-info {
+    .product-gallery,
+    .product-info {
         width: 100%;
     }
 
